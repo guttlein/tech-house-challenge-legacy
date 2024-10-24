@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tech-House-Card-Challenge</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="card">
+      <img
+        src="https://s3-alpha-sig.figma.com/img/aa83/e1c5/a418a6188d32fd932e4e6411a5b393ff?Expires=1730678400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=lvsSRJaSms4IE-7yBkUgZNpI5XjIS9KPKd8HCY1isspWpv6npuc9YpXX-xWhszgdGBgzucML0f27odawaSjnE2nOp96Br0DCYlwgAUOiV7hWpJq47xgmlD3Aj8dw-FY4V5VynqcfpOzD-mDcN7UnaAwdWJlCdsjdr~V-KOjf2W5dCdbxY9C41U3rMF4BN576EYLOSOEU9w4LaiqgX4POvDPri8aKcxJr~WsGUZPaYIq04~4T0tI7gliLVgWcMsUJlhBiowoA2WNKjVzbFxCGZ31o2MMeM3wGOQteWhUme0lEyvY5O0DPFrIg8AjujVL-5RSIiKNNILBnIkd7S0mB1w__"
+        alt="Contenido de la Card"
+        class="card__image"
+      />
+      <div class="card__content">
+        <h2 class="card__title">A partir de 12 meses</h2>
+        <p class="card__description">Pienso especializado saludable</p>
+        <button class="card__button">¡Compra ahora!</button>
+      </div>
+    </div>
+
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $(".card__button").on("click", function () {
+          // Colores setteados en RGB en lugar de Hex, ya que la funcion que devuelve el color de fondo, lo devuelve en RGB y no en Hex
+          const greenBtn = "rgb(122, 184, 0)";
+          const redBtn = "rgb(204, 41, 43)";
+          if ($(this).css("background-color") === greenBtn) {
+            $(this).css("background-color", redBtn);
+          } else {
+            $(this).css("background-color", greenBtn);
+          }
+        });
+
+        function updateImage() {
+          const width = $(window).width();
+          if (width <= 768) {
+            $(".card__image").attr(
+              "src",
+              "https://s3-alpha-sig.figma.com/img/75e0/3c39/de86ed6aa04d0005ba505de9491bd873?Expires=1730678400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=MrbM6AdQfNqBYUmfML0c0RRetC~1-0TK5MhLjIe6FHhrbVKZKD7prpxR4nZrejKcQ-wK~JRyG2vrR6OZgooKdsKaGQL9DY32KB2DklVKNulu6uqEfGI0Kktisi7fzhdGaiEUWvdOJbNfzjzQzbz3RezhsdLQ2cLBNaNLKxlW07xGTz1TwD4EMo0diUii7R6akX7KfBfitZtl9Bw2oKDBJFFpLfD-sDCj6Zuc73aF5bG1G9OWmCVjP8QoTUn~CtD~bK88whT3Mr8Pg4CZT7NxWxks2-CQihLMCO7BYQ1xh0zMXyG-vtZdX-ugHX5ezVYrIcY0b5ONES4gO0dWCkNgbg__"
+            );
+          } else {
+            $(".card__image").attr(
+              "src",
+              "https://s3-alpha-sig.figma.com/img/aa83/e1c5/a418a6188d32fd932e4e6411a5b393ff?Expires=1730678400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=lvsSRJaSms4IE-7yBkUgZNpI5XjIS9KPKd8HCY1isspWpv6npuc9YpXX-xWhszgdGBgzucML0f27odawaSjnE2nOp96Br0DCYlwgAUOiV7hWpJq47xgmlD3Aj8dw-FY4V5VynqcfpOzD-mDcN7UnaAwdWJlCdsjdr~V-KOjf2W5dCdbxY9C41U3rMF4BN576EYLOSOEU9w4LaiqgX4POvDPri8aKcxJr~WsGUZPaYIq04~4T0tI7gliLVgWcMsUJlhBiowoA2WNKjVzbFxCGZ31o2MMeM3wGOQteWhUme0lEyvY5O0DPFrIg8AjujVL-5RSIiKNNILBnIkd7S0mB1w__"
+            );
+          }
+        }
+
+        // Inicializa la imagen al cargar la página
+        updateImage();
+
+        // Actualiza la imagen al redimensionar la ventana
+        $(window).resize(function () {
+          updateImage();
+        });
+      });
+    </script>
+  </body>
+</html>
