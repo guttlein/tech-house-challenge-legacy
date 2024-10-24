@@ -4,4 +4,5 @@ Es una pagina web simple con un elemento card utilizando HTML, SCSS y JQUERY par
 
 #Modo de visualizacion
 
-Abrir index.html con un navegador
+Abrir index.html con un navegador o bien, utilizando el link a la página deploayda en Vercel:
+[Card Page Website](https://tech-house-challenge-legacy.vercel.app/)
