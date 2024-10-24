@@ -14,6 +14,7 @@
     />
   </head>
   <body>
+    <!-- Card Element -->
     <div class="card">
       <img
         src="https://s3-alpha-sig.figma.com/img/aa83/e1c5/a418a6188d32fd932e4e6411a5b393ff?Expires=1730678400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=lvsSRJaSms4IE-7yBkUgZNpI5XjIS9KPKd8HCY1isspWpv6npuc9YpXX-xWhszgdGBgzucML0f27odawaSjnE2nOp96Br0DCYlwgAUOiV7hWpJq47xgmlD3Aj8dw-FY4V5VynqcfpOzD-mDcN7UnaAwdWJlCdsjdr~V-KOjf2W5dCdbxY9C41U3rMF4BN576EYLOSOEU9w4LaiqgX4POvDPri8aKcxJr~WsGUZPaYIq04~4T0tI7gliLVgWcMsUJlhBiowoA2WNKjVzbFxCGZ31o2MMeM3wGOQteWhUme0lEyvY5O0DPFrIg8AjujVL-5RSIiKNNILBnIkd7S0mB1w__"
@@ -31,6 +32,7 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script>
       $(document).ready(function () {
+        // Listener para el click del boton
         $(".card__button").on("click", function () {
           // Colores setteados en RGB en lugar de Hex, ya que la funcion que devuelve el color de fondo, lo devuelve en RGB y no en Hex
           const greenBtn = "rgb(122, 184, 0)";
@@ -42,6 +44,7 @@
           }
         });
 
+        // Funcion para actualizar la SRC de la imagen basado en el resize de la pantalla
         function updateImage() {
           const width = $(window).width();
           if (width <= 768) {

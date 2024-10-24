@@ -1,6 +1,7 @@
 // Variables
 $breakpoint-mobile: 768px;
 
+// Font para toda la pagina
 body {
     font-family: "Nunito", sans-serif;
     font-optical-sizing: auto;
@@ -32,6 +33,7 @@ body {
         height: auto;
     }
 
+    // Contenido de la card sin imagen. Corresponde a titulo, descripcion y boton
     &__content {
         display: flex;
         flex-direction: column;
